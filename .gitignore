@@ -59,6 +59,7 @@
 !*.ppf
 !*.spd
 !*.sip
+!*.mif
 
 !pll_hdmi_clk
 !pll_hdmi_clk_sim
