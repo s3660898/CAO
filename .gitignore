@@ -60,9 +60,8 @@
 !*.spd
 !*.sip
 !*.mif
+!*.vwf
 
-!pll_hdmi_clk
-!pll_hdmi_clk_sim
 !sim
 
 !symbols
