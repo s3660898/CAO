@@ -24,7 +24,7 @@ DATA_RADIX=DEC;
 CONTENT BEGIN
 	0   :   100;
   1   :   -50;
-  2   :   150;
+  2   :   111;
   3   :    12;
 	[4..31]  :   0;
 END;

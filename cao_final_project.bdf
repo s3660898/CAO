@@ -212,6 +212,22 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 78 12)(pt 82 8))
 	)
 )
+(pin
+	(output)
+	(rect 1232 360 1408 376)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "BSel" (rect 90 0 112 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
 (symbol
 	(rect 944 224 1112 384)
 	(text "reg_file_8x8b" (rect 5 0 87 19)(font "Intel Clear" (font_size 8)))
@@ -866,18 +882,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(text "ROM_OUT[10..8]" (rect 778 272 859 289)(font "Intel Clear" ))
-	(pt 776 288)
-	(pt 944 288)
-	(bus)
-)
-(connector
-	(text "ROM_OUT[13..11]" (rect 778 288 865 305)(font "Intel Clear" ))
-	(pt 776 304)
-	(pt 944 304)
-	(bus)
-)
-(connector
 	(pt 888 320)
 	(pt 944 320)
 	(bus)
@@ -999,18 +1003,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 1112 488)
 	(pt 1112 520)
-)
-(connector
-	(pt 1072 504)
-	(pt 1232 504)
-)
-(connector
-	(pt 1232 504)
-	(pt 1232 296)
-)
-(connector
-	(pt 1232 296)
-	(pt 1248 296)
 )
 (connector
 	(pt 1072 488)
@@ -1268,6 +1260,38 @@ https://fpgasoftware.intel.com/eula.
 	(pt 936 256)
 	(pt 944 256)
 )
+(connector
+	(pt 1072 504)
+	(pt 1216 504)
+)
+(connector
+	(pt 1248 296)
+	(pt 1216 296)
+)
+(connector
+	(pt 1216 368)
+	(pt 1232 368)
+)
+(connector
+	(pt 1216 296)
+	(pt 1216 368)
+)
+(connector
+	(pt 1216 368)
+	(pt 1216 504)
+)
+(connector
+	(text "ROM_OUT[9..7]" (rect 778 272 853 289)(font "Intel Clear" ))
+	(pt 776 288)
+	(pt 944 288)
+	(bus)
+)
+(connector
+	(text "ROM_OUT[12..10]" (rect 778 288 865 305)(font "Intel Clear" ))
+	(pt 776 304)
+	(pt 944 304)
+	(bus)
+)
 (junction (pt 552 336))
 (junction (pt -24 168))
 (junction (pt 280 312))
@@ -1287,3 +1311,4 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 1384 168))
 (junction (pt 1624 -96))
 (junction (pt 936 256))
+(junction (pt 1216 368))
