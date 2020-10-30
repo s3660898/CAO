@@ -31,6 +31,7 @@ quit -f
 
 
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -49,6 +50,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 
@@ -1098,6 +1100,26 @@ SIGNAL("SRAM_OUT[0]")
 	PARENT = "SRAM_OUT";
 }
 
+SIGNAL("RF_CLK")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("BSel")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 GROUP("INSTR_OP")
 {
 	MEMBERS = "ROM_OUT[3]", "ROM_OUT[2]", "ROM_OUT[1]", "ROM_OUT[0]";
@@ -1128,17 +1150,7 @@ GROUP("INSTR_NA")
 	MEMBERS = "ROM_OUT[31]", "ROM_OUT[30]", "ROM_OUT[29]", "ROM_OUT[28]", "ROM_OUT[27]", "ROM_OUT[26]", "ROM_OUT[25]", "ROM_OUT[24]", "ROM_OUT[23]", "ROM_OUT[22]", "ROM_OUT[21]";
 }
 
-SIGNAL("RF_CLK")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("BSel")
+SIGNAL("ALU_Branch")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -1991,6 +2003,15 @@ TRANSITION_LIST("RF_CLK")
 }
 
 TRANSITION_LIST("BSel")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ALU_Branch")
 {
 	NODE
 	{
@@ -3068,10 +3089,19 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "BSel";
+	CHANNEL = "ALU_Branch";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 107;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "BSel";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 108;
 	TREE_LEVEL = 0;
 }
 
